@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<article class="blog-post">
+    <div class="body">
+        <h2>{{ sticker.title }}</h2>
+        <div class="meta">
+            <i class="fa fa-user"></i>{{ sticker.author }}<i class="fa fa-calendar"></i>{{ sticker.created_time }}<i class="fa fa-comments"></i>{{ sticker.views }} 阅读
+        </div>
+        <pre>{{ sticker.content|safe }}</pre>
+    </div>
+</article>
+{% endblock main %}

@@ -1,0 +1,49 @@
+{% load staticfiles %}
+{% load customTags %}
+
+<div class="widewrapper masthead">
+    <div class="container">
+        <a href="{% url 'sticker:index' %}" id="logo">
+            <img src="{% static 'img/logo.png' %}" alt="clean Blog">
+        </a>
+
+        <div id="mobile-nav-toggle" class="pull-right">
+            <a href="#" data-toggle="collapse" data-target=".clean-nav .navbar-collapse">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <nav class="pull-right clean-nav">
+            <div class="collapse navbar-collapse">
+                <ul class="nav nav-pills navbar-nav">
+                  
+                    <li>
+                        <a href="{% url 'sticker:index' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'sticker:about' %}">About</a>
+                    </li>                        
+                </ul>
+            </div>
+        </nav>        
+
+    </div>
+</div>
+
+<div class="widewrapper subheader">
+    <div class="container">
+        <div class="clean-breadcrumb">
+            {% parser_full_url request.get_full_path request.path as res %}
+            {{ res }}
+        </div>
+        <!--
+        <div class="clean-searchbox">
+            <form action="#" method="get" accept-charset="utf-8">
+                <input class="searchfield" id="searchbox" type="text" placeholder="Search">
+                <button class="searchbutton" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>-->
+    </div>
+</div>

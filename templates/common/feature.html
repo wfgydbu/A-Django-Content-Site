@@ -1,0 +1,19 @@
+{% load staticfiles %}
+{% load customTags %}
+{% load customFilter %}
+
+<header>
+    <h3>热门帖子</h3>
+</header>
+<div class="body">
+    <ul class="clean-list">
+        {% get_recent_stickers as recent_stickers_list %}
+        {% for sticker in recent_stickers_list %}
+        <li>
+            <a href="{{ sticker.get_absolute_url }}">{{ sticker.title|title_tunc }}</a>
+        </li>
+        {% empty %}
+        暂无内容！
+        {% endfor %}
+    </ul>
+</div>

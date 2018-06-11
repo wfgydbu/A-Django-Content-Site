@@ -1,0 +1,18 @@
+{% load staticfiles %}
+{% load customTags %}
+
+<header>
+    <h3>其他类别</h3>
+</header>
+<div class="body clearfix">
+    <ul class="tags">
+        {% get_categories as categories_list %}
+        {% for category in categories_list %}
+        <li>
+            <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+        </li>
+        {% empty %}
+        暂无内容！
+        {% endfor %}
+    </ul>
+</div>
